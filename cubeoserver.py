@@ -23,6 +23,16 @@ cubeo = Cubeo("COM12")
 @app.route("/")
 def hello():
 	return control_panel%"Welcome, choose a command:"
+@app.route("/startpanel")
+def startpanel():
+	speed = request.args.get("speed")
+	servo = request.args.get("panel")
+	cubeo.start_panel(servo,speed)
+
+@app.route("/stoppanel")
+def stoppanel():
+	servo = request.args.get("panel")
+	cubeo.stop_panel(servo)
 
 @app.route("/wave")
 def wave():
