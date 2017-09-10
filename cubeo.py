@@ -33,6 +33,14 @@ class Cubeo:
 			print("servo: ",servo)
 			time.sleep(1)
 			self.cubeo_controller.setTarget(servo,self.STOP)
+	def move_panel_duration(self, servo, speed, duration):
+		self.cubeo_controller.setTarget(servo,speed)
+		time.sleep(duration)
+		self.cubeo_controller.setTarget(servo,self.stop)
+	def start_panel(self,servo,speed):
+		self.cubeo_controller.setTarget(servo,speed)
+	def stop_panel(self,servo):
+		self.cubeo_controller.setTarget(servo,self.STOP)
 	def expand_all(self):
 		for servo in self.servos:
 			self.cubeo_controller.setTarget(servo,self.SLOW)
