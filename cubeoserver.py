@@ -9,7 +9,7 @@ control_panel = '''<html>
 	</head>
 	<body>
 		<script type="text/javascript">
-			var step = 50;
+			var step = 1;
 			$(document).keypress(function(event) {
 				var char = event.charCode;
 				var one = $("#one");
@@ -94,10 +94,10 @@ control_panel = '''<html>
 		</script>
 		<h3>%s</h3>
 		<ul>
-			<li>2<input id="one" type="range" min="0" max="7500" step="10" value="0" onchange="setSpeed(2, this.value)"></li>
-			<li>4<input id="two" type="range" min="0" max="7500" step="10" value="0" onchange="setSpeed(4, this.value)"></li>
-			<li>3<input id="three" type="range" min="0" max="7500" step="10" value="0" onchange="setSpeed(3, this.value)"></li>
-			<li>5<input id="four" type="range" min="0" max="7500" step="10" value="0" onchange="setSpeed(5, this.value)"></li>
+			<li>2<input id="one" type="range" min="0" max="7500" step="1" value="0" onchange="setSpeed(2, this.value)"></li>
+			<li>4<input id="two" type="range" min="0" max="7500" step="1" value="0" onchange="setSpeed(4, this.value)"></li>
+			<li>3<input id="three" type="range" min="0" max="7500" step="1" value="0" onchange="setSpeed(3, this.value)"></li>
+			<li>5<input id="four" type="range" min="0" max="7500" step="1" value="0" onchange="setSpeed(5, this.value)"></li>
 			<li><a href="http://cubeo.ngrok.io/wave">Do the Wave</a></li>
 			<li><a href="http://cubeo.ngrok.io/breatheslow">Breathe Slowly</a></li>
 			<li><a href="http://cubeo.ngrok.io/breathemedium">Breathe Normally</a></li>
