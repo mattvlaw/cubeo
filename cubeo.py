@@ -38,6 +38,7 @@ class Cubeo:
 		time.sleep(duration)
 		self.cubeo_controller.setTarget(servo,self.stop)
 	def start_panel(self,servo,speed):
+		print("SPEED ",speed)
 		self.cubeo_controller.setTarget(servo,speed)
 	def stop_panel(self,servo):
 		self.cubeo_controller.setTarget(servo,self.STOP)
