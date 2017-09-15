@@ -7,75 +7,74 @@
 			var step = 50;
 			$(document).keypress(function(event) {
 				var char = event.charCode;
-				console.log(char);
 				var one = $("#one");
 				var two = $("#two");
 				var three = $("#three");
 				var four = $("#four");
-
 				var currentVal;
 
 				switch(char){
 					case 113: //char = q
-						currentVal = one.val();
+						currentVal = parseInt(one.val());
 						one.val(currentVal+=step);
-						one.slider('refresh');
+						setSpeed(2,currentVal);
 						break;
 					case 97: //char = a
-						currentVal = one.val();
+						currentVal = parseInt(one.val());
 						one.val(currentVal-=step);
-						one.slider('refresh');
+						setSpeed(2,currentVal);
 						break;
 					case 122: //char = z
 						one.val(0);
-						one.slider('refresh');
+						setSpeed(2,0);
 						break;
 					case 101: //char = e
-						currentVal = two.val();
+						currentVal = parseInt(two.val());
 						two.val(currentVal+=step);
-						two.slider('refresh');
+						setSpeed(4,currentVal);
 						break;
 					case 100: //char = d
-						currentVal = two.val();
+						currentVal = parseInt(two.val());
 						two.val(currentVal-=step);
-						two.slider('refresh');
+						setSpeed(4,currentVal);
 						break;
 					case 99: //char = c
 						two.val(0);
-						two.slider('refresh');
+						setSpeed(4,0);
 						break;
 					case 112: //char = p
-						currentVal = three.val();
+						currentVal = parseInt(three.val());
 						three.val(currentVal+=step);
-						three.slider('refresh');
+						setSpeed(3,currentVal);
 						break;
 					case 108: //char = l
-						currentVal = three.val();
+						currentVal = parseInt(three.val());
 						three.val(currentVal-=step);
-						three.slider('refresh');
+						setSpeed(3,currentVal);
 						break;
 					case 44: //char = ,
 						three.val(0);
-						three.slider('refresh');
+						setSpeed(3,0);
 						break;
 					case 93: //char = ]
-						currentVal = four.val();
+						currentVal = parseInt(four.val());
 						four.val(currentVal+=step);
-						four.slider('refresh');
+						setSpeed(5,currentVal);
 						break;
 					case 39: //char = '
-						currentVal = four.val();
+						currentVal = parseInt(four.val());
 						four.val(currentVal-=step);
-						four.slider('refresh');
+						setSpeed(5,currentVal);
 						break;
 					case 47: //char = /
 						four.val(0);
-						four.slider('refresh');
+						setSpeed(5,0);
 						break;
 				}
 			});
 
 			function setSpeed(servo, speed) {
+				console.log("New Speed");
 				if(speed != 0){
 					$.get("cubeo.ngrok.io/startpanel?panel=" + servo + "&speed=" + speed, function(response){
 						console.log(response);
@@ -89,10 +88,10 @@
 			}
 		</script>
 		<ul>
-			<li>2<input id="one" type="range" min="0" max="7500" step="10" onchange="setSpeed(2, this.value)"></li>
-			<li>4<input id="two" type="range" min="0" max="7500" step="10" onchange="setSpeed(4, this.value)"></li>
-			<li>3<input id="three" type="range" min="0" max="7500" step="10" onchange="setSpeed(3, this.value)"></li>
-			<li>5<input id="four" type="range" min="0" max="7500" step="10" onchange="setSpeed(5, this.value)"></li>
+			<li>2<input id="one" type="range" min="0" max="7500" step="10" value="0" onchange="setSpeed(2, this.value)"></li>
+			<li>4<input id="two" type="range" min="0" max="7500" step="10" value="0" onchange="setSpeed(4, this.value)"></li>
+			<li>3<input id="three" type="range" min="0" max="7500" step="10" value="0" onchange="setSpeed(3, this.value)"></li>
+			<li>5<input id="four" type="range" min="0" max="7500" step="10" value="0" onchange="setSpeed(5, this.value)"></li>
 			<li><a href="cubeo.ngrok.io/wave">Do the Wave</a></li>
 			<li><a href="cubeo.ngrok.io/breatheslow">Breathe Slowly</a></li>
 			<li><a href="cubeo.ngrok.io/breathemedium">Breathe Normally</a></li>
