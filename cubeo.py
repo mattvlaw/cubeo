@@ -31,7 +31,7 @@ class Cubeo:
 		for servo in self.servos:
 			self.cubeo_controller.setTarget(servo,self.FAST)
 			print("servo: ",servo)
-			time.sleep(1)
+			time.sleep(0.5)
 			self.cubeo_controller.setTarget(servo,self.STOP)
 	def move_panel_duration(self, servo, speed, duration):
 		self.cubeo_controller.setTarget(servo,speed)
