@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function setSpeed(servo, speed) {
+				if(speed != 0){
+					$.get("cubeo.ngrok.io/startpanel?panel=" + servo + "&speed=" + speed, function(response){
+						console.log(response);
+					});
+				}
+				else{
+					$.get("cubeo.ngrok.io/stoppanel?panel=" + servo, function(response){
+						console.log(response);
+					});
+				}
+			}
+		</script>
+		<ul>
+			<li>2<input type="range" min="0" max="7500" step="10" oninput="setSpeed(2, this.value)"></li>
+			<li>4<input type="range" min="0" max="7500" step="10" oninput="setSpeed(4, this.value)"></li>
+			<li>3<input type="range" min="0" max="7500" step="10" oninput="setSpeed(3, this.value)"></li>
+			<li>5<input type="range" min="0" max="7500" step="10" oninput="setSpeed(5, this.value)"></li>
+			<li><a href="cubeo.ngrok.io/wave">Do the Wave</a></li>
+			<li><a href="cubeo.ngrok.io/breatheslow">Breathe Slowly</a></li>
+			<li><a href="cubeo.ngrok.io/breathemedium">Breathe Normally</a></li>
+			<li><a href="cubeo.ngrok.io/breathefast">Breath Fast</a></li>
+			<li><a href="cubeo.ngrok.io/breatheveryfast">Breathe VERY FAST</a></li>
+			<a href="cubeo.ngrok.io/breathestop">Stop Breathing</a></li>
+		</ul>
+	</body>
+<html>

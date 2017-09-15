@@ -6,10 +6,10 @@ control_panel = '''<html>
 						<body>
 						<h3>%s</h3>
 						<ul>
-						<li><input type="range" min="0" max="7500" step="10" oninput="()"></li>
-						<li><input type="range" min="0" max="7500" step="10" oninput="()"></li>
-						<li><input type="range" min="0" max="7500" step="10" oninput="()"></li>
-						<li><input type="range" min="0" max="7500" step="10" oninput="()"></li>
+						<li><input type="range" min="0" max="7500" step="10"></li>
+						<li><input type="range" min="0" max="7500" step="10"></li>
+						<li><input type="range" min="0" max="7500" step="10"></li>
+						<li><input type="range" min="0" max="7500" step="10"></li>
 						<li><a href="/wave">Do the Wave</a></li>
 						<li><a href="/breatheslow">Breathe Slowly</a></li>
 						<li><a href="/breathemedium">Breathe Normally</a></li>
@@ -67,8 +67,6 @@ def breathemedium():
 def breatheveryfast():
 	cubeo.breathe_very_fast()
 	return control_panel%"HYPERVENTILATING!!!!. PLEASE choose another command:"
-
-
 
 if __name__ == "__main__":
 	app.run()
