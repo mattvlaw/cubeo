@@ -29,7 +29,7 @@ class Cubeo:
 
 	def do_the_wave(self,start=0,direction="clockwise"):
 		for servo in self.servos:
-			self.cubeo_controller.setTarget(servo,self.MEDIUM)
+			self.cubeo_controller.setTarget(servo,self.FAST)
 			print("servo: ",servo)
 			time.sleep(1)
 			self.cubeo_controller.setTarget(servo,self.STOP)
