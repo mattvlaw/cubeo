@@ -9,7 +9,7 @@ control_panel = '''<html>
 	</head>
 	<body>
 		<script type="text/javascript">
-			var step = 1;
+			var step = 10;
 			$(document).keypress(function(event) {
 				var char = event.charCode;
 				var one = $("#one");
