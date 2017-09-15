@@ -1,4 +1,5 @@
-from flask import Flask
+#!/usr/bin/python
+from flask import Flask,request
 from cubeo import Cubeo
 
 
@@ -109,7 +110,7 @@ control_panel = '''<html>
 '''
 
 app = Flask(__name__)
-cubeo = Cubeo("COM12")
+cubeo = Cubeo("/dev/ttyACM0")
 
 @app.route("/")
 def hello():
@@ -157,4 +158,4 @@ def breatheveryfast():
 	return control_panel%"HYPERVENTILATING!!!!. PLEASE choose another command:"
 
 if __name__ == "__main__":
-	app.run()
+	app.run(host='0.0.0.0')
