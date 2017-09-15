@@ -6,6 +6,10 @@ control_panel = '''<html>
 						<body>
 						<h3>%s</h3>
 						<ul>
+						<li><input type="range" min="0" max="7500" step="10" oninput="()"></li>
+						<li><input type="range" min="0" max="7500" step="10" oninput="()"></li>
+						<li><input type="range" min="0" max="7500" step="10" oninput="()"></li>
+						<li><input type="range" min="0" max="7500" step="10" oninput="()"></li>
 						<li><a href="/wave">Do the Wave</a></li>
 						<li><a href="/breatheslow">Breathe Slowly</a></li>
 						<li><a href="/breathemedium">Breathe Normally</a></li>
