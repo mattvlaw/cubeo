@@ -30,8 +30,8 @@ control_panel = '''<html>
 						setSpeed(2,currentVal);
 						break;
 					case 122: //char = z
-						one.val(0);
-						setSpeed(2,0);
+						one.val(6000);
+						setSpeed(2,6000);
 						break;
 					case 101: //char = e
 						currentVal = parseInt(two.val());
@@ -44,8 +44,8 @@ control_panel = '''<html>
 						setSpeed(4,currentVal);
 						break;
 					case 99: //char = c
-						two.val(0);
-						setSpeed(4,0);
+						two.val(6000);
+						setSpeed(4,6000);
 						break;
 					case 112: //char = p
 						currentVal = parseInt(three.val());
@@ -58,8 +58,8 @@ control_panel = '''<html>
 						setSpeed(3,currentVal);
 						break;
 					case 44: //char = ,
-						three.val(0);
-						setSpeed(3,0);
+						three.val(6000);
+						setSpeed(3,6000);
 						break;
 					case 93: //char = ]
 						currentVal = parseInt(four.val());
@@ -72,8 +72,8 @@ control_panel = '''<html>
 						setSpeed(5,currentVal);
 						break;
 					case 47: //char = /
-						four.val(0);
-						setSpeed(5,0);
+						four.val(6000);
+						setSpeed(5,6000);
 						break;
 				}
 			});
