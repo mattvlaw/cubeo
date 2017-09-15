@@ -80,7 +80,7 @@ control_panel = '''<html>
 
 			function setSpeed(servo, speed) {
 				console.log("New Speed");
-				if(speed != 0){
+				if(speed > 0){
 					$.get("http://cubeo.ngrok.io/startpanel?panel=" + servo + "&speed=" + speed, function(response){
 						console.log(response);
 					});
