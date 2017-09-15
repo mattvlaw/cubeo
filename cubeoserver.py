@@ -29,14 +29,15 @@ def hello():
 	return control_panel%"Welcome, choose a command:"
 @app.route("/startpanel")
 def startpanel():
-	speed = request.args.get("speed")
-	servo = request.args.get("panel")
+	speed = int(request.args.get("speed"))
+	servo = int(request.args.get("panel"))
 	cubeo.start_panel(servo,speed)
-
+	return "Panel: "+str(servo)+" Speed: "+str(speed)
 @app.route("/stoppanel")
 def stoppanel():
-	servo = request.args.get("panel")
+	servo = int(request.args.get("panel"))
 	cubeo.stop_panel(servo)
+	return "Panel: "+str(servo)+" Speed: 0"
 
 @app.route("/wave")
 def wave():
