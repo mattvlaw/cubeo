@@ -4,6 +4,77 @@
 	</head>
 	<body>
 		<script type="text/javascript">
+			var step = 50;
+			$(document).keypress(function(event) {
+				var char = event.charCode;
+				console.log(char);
+				var one = $("#one");
+				var two = $("#two");
+				var three = $("#three");
+				var four = $("#four");
+
+				var currentVal;
+
+				switch(char){
+					case 113: //char = q
+						currentVal = one.val();
+						one.val(currentVal+=step);
+						one.slider('refresh');
+						break;
+					case 97: //char = a
+						currentVal = one.val();
+						one.val(currentVal-=step);
+						one.slider('refresh');
+						break;
+					case 122: //char = z
+						one.val(0);
+						one.slider('refresh');
+						break;
+					case 101: //char = e
+						currentVal = two.val();
+						two.val(currentVal+=step);
+						two.slider('refresh');
+						break;
+					case 100: //char = d
+						currentVal = two.val();
+						two.val(currentVal-=step);
+						two.slider('refresh');
+						break;
+					case 99: //char = c
+						two.val(0);
+						two.slider('refresh');
+						break;
+					case 112: //char = p
+						currentVal = three.val();
+						three.val(currentVal+=step);
+						three.slider('refresh');
+						break;
+					case 108: //char = l
+						currentVal = three.val();
+						three.val(currentVal-=step);
+						three.slider('refresh');
+						break;
+					case 44: //char = ,
+						three.val(0);
+						three.slider('refresh');
+						break;
+					case 93: //char = ]
+						currentVal = four.val();
+						four.val(currentVal+=step);
+						four.slider('refresh');
+						break;
+					case 39: //char = '
+						currentVal = four.val();
+						four.val(currentVal-=step);
+						four.slider('refresh');
+						break;
+					case 47: //char = /
+						four.val(0);
+						four.slider('refresh');
+						break;
+				}
+			});
+
 			function setSpeed(servo, speed) {
 				if(speed != 0){
 					$.get("cubeo.ngrok.io/startpanel?panel=" + servo + "&speed=" + speed, function(response){
@@ -18,16 +89,16 @@
 			}
 		</script>
 		<ul>
-			<li>2<input type="range" min="0" max="7500" step="10" oninput="setSpeed(2, this.value)"></li>
-			<li>4<input type="range" min="0" max="7500" step="10" oninput="setSpeed(4, this.value)"></li>
-			<li>3<input type="range" min="0" max="7500" step="10" oninput="setSpeed(3, this.value)"></li>
-			<li>5<input type="range" min="0" max="7500" step="10" oninput="setSpeed(5, this.value)"></li>
+			<li>2<input id="one" type="range" min="0" max="7500" step="10" onchange="setSpeed(2, this.value)"></li>
+			<li>4<input id="two" type="range" min="0" max="7500" step="10" onchange="setSpeed(4, this.value)"></li>
+			<li>3<input id="three" type="range" min="0" max="7500" step="10" onchange="setSpeed(3, this.value)"></li>
+			<li>5<input id="four" type="range" min="0" max="7500" step="10" onchange="setSpeed(5, this.value)"></li>
 			<li><a href="cubeo.ngrok.io/wave">Do the Wave</a></li>
 			<li><a href="cubeo.ngrok.io/breatheslow">Breathe Slowly</a></li>
 			<li><a href="cubeo.ngrok.io/breathemedium">Breathe Normally</a></li>
 			<li><a href="cubeo.ngrok.io/breathefast">Breath Fast</a></li>
 			<li><a href="cubeo.ngrok.io/breatheveryfast">Breathe VERY FAST</a></li>
-			<a href="cubeo.ngrok.io/breathestop">Stop Breathing</a></li>
+			<li><a href="cubeo.ngrok.io/breathestop">Stop Breathing</a></li>
 		</ul>
 	</body>
 <html>
